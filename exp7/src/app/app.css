@@ -1,0 +1,35 @@
+mat-sidenav-container {
+
+  height: 100vh;
+}
+
+mat-sidenav {
+  width: 240px;
+  background-color: #763fb5;
+  color: white;
+  padding: 20px;
+  border-radius: 10;
+}
+
+mat-toolbar {
+  background-color: #763fb5;
+  color: white;
+  font-size: 18px;
+}
+
+mat-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-nav-list a {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+mat-nav-list a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
