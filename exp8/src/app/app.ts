@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Fetchdata } from './fetchdata';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { FetchData } from '../fetch-data';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,12 @@ import { MatListModule } from '@angular/material/list';
 export class App implements OnInit {
   userList: any[] = [];
 
-  constructor(private fetchService: Fetchdata) {}
+  constructor(private fetchService: FetchData) {}
 
   ngOnInit(): void {
-    this.fetchService.getUser().subscribe({
-      next: (users) => (this.userList = users),
-      error: (err) => console.error('HTTP Error:', err),
+    this.fetchService.getUsers().subscribe((data) => {
+      this.userList = data;
+      console.log('feteched Users: ', data);
     });
   }
 }
